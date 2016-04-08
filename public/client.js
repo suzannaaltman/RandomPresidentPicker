@@ -14,7 +14,7 @@ $scope.showCand = false;
       $scope.righties = response.data;
     });
 
-    $scope.showCand = $scope.showing ? false : true;
+    $scope.showCand = $scope.showCand ? false : true;
   };
 
 
