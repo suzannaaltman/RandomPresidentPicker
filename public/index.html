@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="poliApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Merica</title>
+    <script src="angular.min.js"></script>
+    <script src="client.js"></script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body ng-controller="winnerMaker">
+    <h1>Let's "Elect" A President</h1>
+    <h2>It's all over anyway, right?</h2>
+    <div class="buttonHolder">
+      <button ng-click="revealCandidates()" id="reveal">Reveal Candidates</button>
+      <button ng-click="getPresident()" id="getPres">Generate Winner!</button>
+    </div>
+    <div ng-show="showing" class="winner">
+      <img src="bubbleImage.png" />
+      <div class="winnerText"><h4>Winner is:<br>{{winner}}</h4></div>
+    </div>
+    <main>
+      <div ng-show="showCand" class="candidates" >
+        <h3>Lefties:</h3>
+        <ul>
+          <li ng-repeat="person in lefties">
+            {{person}}
+          </li>
+        </ul>
+      </div>
+
+      <div ng-show="showCand" class="candidates">
+        <h3>Righties:</h3>
+        <ul>
+          <li ng-repeat="person in righties">
+            {{person}}
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
