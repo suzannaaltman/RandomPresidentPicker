@@ -19,14 +19,16 @@ $scope.showCand = false;
 
 
   $scope.getPresident = function(){
-    $http.get('/randomIndex').then(function(response){
-      $scope.winner = response.data;
-      $scope.showing = $scope.showing ? false : true;
-    });
+    if($scope.showing == true){
+      $scope.showing = false;
+    }else{
+      $http.get('/randomIndex').then(function(response){
+        $scope.winner = response.data;
+        console.log(response.data);
+        $scope.showing = true;
+      })
+    };
   };
-
-
-
 
 
 })
